@@ -4,7 +4,11 @@ using System.Text;
 
 namespace Training.januari.week2
 {
-    class CheckIfTwoStringArraysAreEquivalent
+    public class CheckIfTwoStringArraysAreEquivalent
     {
+        public bool ArrayStringsAreEqual(string[] word1, string[] word2)
+        {
+            throw new NotImplementedException();
+        }
     }
 }
