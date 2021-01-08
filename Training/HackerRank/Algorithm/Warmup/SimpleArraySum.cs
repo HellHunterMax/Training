@@ -2,6 +2,7 @@
 
 namespace Training.HackerRank.Algorithm.Warmup
 {
+    //https://www.hackerrank.com/challenges/simple-array-sum/problem
     public static class SimpleArraySum
     {
         public static int SimpleArraySumLINQ(int[] arr)
