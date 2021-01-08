@@ -23,4 +23,8 @@
     <ProjectReference Include="..\Training\Training.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="januari\week1\" />
+  </ItemGroup>
+
 </Project>
