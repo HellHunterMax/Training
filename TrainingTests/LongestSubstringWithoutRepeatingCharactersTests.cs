@@ -5,16 +5,15 @@ namespace TrainingTests
 {
     public class LongestSubstringWithoutRepeatingCharactersTests
     {
-        [Fact]
-        public void FactTest()
-        {
-            Assert.Equal(1, 1);
-        }
-
-        [InlineData(1, 1)]
+        [InlineData(3, "abcabcbb")]
+        [InlineData(1, "bbbbb")]
+        [InlineData(0, "")]
+        [InlineData(3, "pwwkew")]
         [Theory]
-        public void TheoryTest(int expected, int actual)
+        public void TheoryTest(int expected, string s)
         {
+            int actual = LongestSubstringWithoutRepeatingCharacters.Get(s);
+
             Assert.Equal(expected, actual);
         }
     }
