@@ -6,5 +6,10 @@ namespace Training.HackerRank.Algorithm.Warmup
 {
     public static class SimpleArraySum
     {
+        public static int simpleArraySum(int[] ar)
+        {
+            throw new NotImplementedException();
+
+        }
     }
 }
