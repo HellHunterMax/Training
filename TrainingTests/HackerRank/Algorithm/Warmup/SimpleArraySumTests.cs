@@ -21,4 +21,20 @@ namespace TrainingTests.HackerRank.Algorithm.Warmup
 
             Assert.Equal(expected, actual);
         }
-}
+
+        [InlineData(new int[] { 0 }, 0)]
+        [InlineData(new int[] { 0, 1 }, 1)]
+        [InlineData(new int[] { 0, -1 }, -1)]
+        [InlineData(new int[] { 1, 1 }, 2)]
+        [InlineData(new int[] { 2, -3 }, -1)]
+        [InlineData(new int[] { 0, 0 }, 0)]
+        [InlineData(new int[] { -1, -1 }, -2)]
+        [InlineData(new int[] { 1, 1, 1, 1, 1 }, 5)]
+        [Theory]
+        public void simpleArraySumOwn_Given_IntArray_Returns_Sum(int[] arr, int expected)
+        {
+            int actual = SimpleArraySum.simpleArraySum(arr);
+
+            Assert.Equal(expected, actual);
+        }
+    }

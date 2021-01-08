@@ -1,15 +1,24 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
+﻿using System.Linq;
 
 namespace Training.HackerRank.Algorithm.Warmup
 {
     public static class SimpleArraySum
     {
-        public static int simpleArraySum(int[] ar)
+        public static int simpleArraySum(int[] arr)
         {
-            throw new NotImplementedException();
+            return arr.Sum();
+        }
 
+        public static int simpleArraySumOwn(int[] arr)
+        {
+            int sum = 0;
+
+            foreach (int i in arr)
+            {
+                sum += i;
+            }
+
+            return sum;
         }
     }
 }
