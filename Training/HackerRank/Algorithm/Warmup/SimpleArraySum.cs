@@ -4,12 +4,12 @@ namespace Training.HackerRank.Algorithm.Warmup
 {
     public static class SimpleArraySum
     {
-        public static int simpleArraySum(int[] arr)
+        public static int SimpleArraySumLINQ(int[] arr)
         {
             return arr.Sum();
         }
 
-        public static int simpleArraySumOwn(int[] arr)
+        public static int SimpleArraySumOwn(int[] arr)
         {
             int sum = 0;
 
