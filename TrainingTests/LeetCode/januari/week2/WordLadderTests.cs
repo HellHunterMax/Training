@@ -6,10 +6,8 @@ namespace TrainingTests.LeetCode.januari.week2
 {
     public class WordLadderTests
     {
-        [InlineData(5, "hot", "cog", new string[] {"hot", "dot", "dog", "lot", "log", "cog"})]
-        [InlineData(0, "hot", "cog", new string[] { "hot", "dot", "dog", "lot", "log" })]
-        [InlineData(0, "hot", "cog", new string[] { "cog", "dot", "dog", "lot", "log", "hot" })]
-        [InlineData(5, "hot", "cog", new string[] { "hot", "hot", "dog", "lot", "log", "cog" })]
+        [InlineData(5, "hit", "cog", new string[] { "hot", "dot", "dog", "lot", "log", "cog"})]
+        [InlineData(0, "hit", "cog", new string[] { "hot", "dot", "dog", "lot", "log" })]
         [Theory]
         public void WordLadder_Given_ListOfWordsAndStartAndStop_Returns_Length(int expected, string beginWord, string endWord, IList<string> wordList)
         {
