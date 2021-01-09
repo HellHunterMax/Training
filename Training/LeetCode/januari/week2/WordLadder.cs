@@ -16,7 +16,7 @@ namespace Training.LeetCode.januari.week2
                 return 0;
             }
 
-            return ;
+            return 0;
         }
 
         public static List<List<string>> FindListOfPossibleTransformations(string beginWord, string endWord, IList<string> wordList)
@@ -44,7 +44,7 @@ namespace Training.LeetCode.januari.week2
                     List<string> possible2 = FindPossibleTransformations(list[list.Count], endWord, wordList, list);
                 }
             }
-
+            return possibleTransformationStrings;
         }
 
         public static List<string> FindPossibleTransformations(string currentWord, string endWord, IList<string> wordList, List<string> usedWords)
