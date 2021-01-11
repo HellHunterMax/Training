@@ -9,6 +9,7 @@ namespace Training.LeetCode.januari.week2
         private int _m;
         private int[] _nums2;
         private int _n;
+
         public int[] Merge(int[] nums1, int m, int[] nums2, int n)
         {
             _nums1 = nums1;
