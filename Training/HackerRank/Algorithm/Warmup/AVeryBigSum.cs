@@ -7,7 +7,7 @@ namespace Training.HackerRank.Algorithm.Warmup
 {
     public static class AVeryBigSum
     {
-        public static long aVeryBigSum(long[] ar)
+        public static long VeryBigSum(long[] ar)
         {
             long sum = ar.Sum();
 
