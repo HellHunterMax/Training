@@ -23,8 +23,6 @@ namespace Training.LeetCode.januari.week2
             string number1 = string.Empty;
             string number2 = string.Empty;
 
-            number1 += l1.val;
-
             while (l1 != null)
             {
                 number1 += l1.val;
@@ -39,9 +37,9 @@ namespace Training.LeetCode.januari.week2
 
             List<ListNode> listOfNodes = new List<ListNode>();
 
-            for (int i = 0; i < sum.Length; i++)
+            for (int i = sum.Length - 1; i >= 0; i--)
             {
-                listOfNodes.Add(new ListNode(sum[i]));
+                listOfNodes.Add(new ListNode(int.Parse(sum[i].ToString())));
 
             }
             for (int i = 0; i < listOfNodes.Count - 1; i++)
