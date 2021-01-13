@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Numerics;
 using System.Text;
 
 namespace Training.LeetCode.januari.week2
@@ -33,7 +34,9 @@ namespace Training.LeetCode.januari.week2
                 number2 += l2.val;
                 l2 = l2.next;
             }
-            string sum = ((int.Parse(number1)) + (int.Parse(number2))).ToString();
+            number1 = Reverse(number1);
+            number2 = Reverse(number2);
+            string sum = ((BigInteger.Parse(number1)) + (BigInteger.Parse(number2))).ToString();
 
             List<ListNode> listOfNodes = new List<ListNode>();
 
@@ -48,6 +51,12 @@ namespace Training.LeetCode.januari.week2
             }
 
             return listOfNodes[0];
+        }
+        public static string Reverse(string s)
+        {
+            char[] charArray = s.ToCharArray();
+            Array.Reverse(charArray);
+            return new string(charArray);
         }
     }
 }
