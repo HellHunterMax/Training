@@ -5,7 +5,7 @@ namespace Training.LeetCode.januari.week2
 {
     public static class BoatsToSavePeople
     {
-
+        //https://leetcode.com/submissions/detail/442724472/?from=explore&item_id=3602
         public static int NumRescueBoats(int[] people, int limit)
         {
             return NumRescueBoatsOwn(people, limit);
