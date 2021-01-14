@@ -6,6 +6,7 @@ using System.Text;
 namespace Training.LeetCode.januari.week2
 {
     //https://leetcode.com/explore/challenge/card/january-leetcoding-challenge-2021/580/week-2-january-8th-january-14th/3601/
+    //TODO Could use some Refactoring for Readability!
 
     public class ListNode
     {
