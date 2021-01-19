@@ -8,6 +8,7 @@ namespace TrainingTests.LeetCode.januari.Week3
 
         [Theory]
         [InlineData(2, new int[] { 1, 2, 3, 4 }, 5)]
+        [InlineData(1, new int[] { 3, 1, 3, 4, 3 }, 6)]
         public void MaxNumberOfKSumPairs_Given_ArrayAndNumber_Returns_NumberOfOpperationsPossible(int expected, int[] nums, int k)
         {
             int actual = MaxNumberOfKSumPairs.MaxOperations(nums, k);
