@@ -5,6 +5,8 @@ using System.Text;
 
 namespace Training.LeetCode.januari.week3
 {
+    //https://leetcode.com/submissions/detail/444810470/?from=explore&item_id=3608
+    //1,5 hours
     public static class MaxNumberOfKSumPairs
     {
         public static  int MaxOperations(int[] nums, int k)
