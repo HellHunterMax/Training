@@ -4,9 +4,9 @@ using System.Text;
 
 namespace Training.LeetCode.januari.week3
 {
-    public class ValidParentheses
+    public static class ValidParentheses
     {
-        public bool IsValid(string s)
+        public static bool IsValid(string s)
         {
             bool answer = false;
 
