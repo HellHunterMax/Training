@@ -16,9 +16,9 @@ namespace TrainingTests.LeetCode.januari.week2
 
         public void MinOperations_Given_ArrayAndInt_Returns_MinimumToGetToZero(int expected, int[] nums, int x)
         {
-            int actual = MinimumOperationsToReduceXToZero.MinOperations(nums, x);
+            //int actual = MinimumOperationsToReduceXToZero.MinOperations(nums, x);
 
-            Assert.Equal(expected, actual);
+            //Assert.Equal(expected, actual);
         }
         */
     }
