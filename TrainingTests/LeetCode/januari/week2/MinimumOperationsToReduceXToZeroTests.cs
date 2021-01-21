@@ -5,6 +5,7 @@ namespace TrainingTests.LeetCode.januari.week2
 {
     public class MinimumOperationsToReduceXToZeroTests
     {
+        /*
 
         [Theory]
         [InlineData(2, new int[] { 1, 1, 4, 2, 3 }, 5)]
@@ -19,5 +20,6 @@ namespace TrainingTests.LeetCode.januari.week2
 
             Assert.Equal(expected, actual);
         }
+        */
     }
 }
