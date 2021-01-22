@@ -4,9 +4,9 @@ using System.Text;
 
 namespace Training.LeetCode.januari.week3
 {
-    public class FindTheMostCompetitiveSubsequence
+    public static class FindTheMostCompetitiveSubsequence
     {
-        public int[] MostCompetitive(int[] nums, int k)
+        public static int[] MostCompetitive(int[] nums, int k)
         {
             throw new NotImplementedException();
         }

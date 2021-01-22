@@ -1,4 +1,5 @@
-﻿using Xunit;
+﻿using Training.LeetCode.januari.week3;
+using Xunit;
 
 namespace TrainingTests.LeetCode.januari.Week3
 {
@@ -9,7 +10,9 @@ namespace TrainingTests.LeetCode.januari.Week3
         [InlineData(new int[] { 2, 3, 3, 4 }, new int[] { 2, 4, 3, 3, 5, 4, 9, 6 }, 4)]
         public void FindTheMostCompetitiveSubsequence_Given_Array_Returns_FindTheMostCompetitiveArray(int[] expected, int[] nums, int k)
         {
+            var actual = FindTheMostCompetitiveSubsequence.MostCompetitive(nums, k);
 
+            Assert.Equal(expected, actual);
         }
     }
 }
