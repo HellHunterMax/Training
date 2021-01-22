@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Text;
 
 namespace Training.LeetCode.januari.week3
@@ -8,7 +9,7 @@ namespace Training.LeetCode.januari.week3
     {
         public static int[] MostCompetitive(int[] nums, int k)
         {
-            return FirstTry(nums, k);
+            return SecondTry(nums, k);
         }
 
         private static int[] FirstTry(int[] nums, int k)
@@ -29,6 +30,27 @@ namespace Training.LeetCode.januari.week3
                         winner[i] = nums[j];
                     }
                 }
+            }
+            return winner;
+        }
+
+        private static int[] SecondTry(int[] nums, int k)
+        {
+            int[] winner = new int[k];
+            int last = 0;
+
+            for (int i = 0; i < k; i++)
+            {
+                int[] anArray = new int[nums.Length - (k - i) - last +1];
+
+                int j = last;
+                for (int l = 0; l < anArray.Length; l++, j++)
+                {
+                    anArray[l] = nums[j];
+                }
+
+                winner[i] = anArray.Min();
+                last += Array.IndexOf(anArray, winner[i]) + 1;
             }
             return winner;
         }
