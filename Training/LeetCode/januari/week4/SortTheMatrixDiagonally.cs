@@ -4,9 +4,9 @@ using System.Text;
 
 namespace Training.LeetCode.januari.week4
 {
-    public class SortTheMatrixDiagonally
+    public static class SortTheMatrixDiagonally
     {
-        public int[][] DiagonalSort(int[][] mat)
+        public static int[][] DiagonalSort(int[][] mat)
         {
             throw new NotImplementedException();
         }
