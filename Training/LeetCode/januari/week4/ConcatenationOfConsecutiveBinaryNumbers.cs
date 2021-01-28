@@ -6,6 +6,8 @@ using System.Text;
 
 namespace Training.LeetCode.januari.week4
 {
+
+    //Too Hard :( even after watching Youtube.
     public static class ConcatenationOfConsecutiveBinaryNumbers
     {
         public static int ConcatenatedBinary(int n)
@@ -21,6 +23,16 @@ namespace Training.LeetCode.januari.week4
             {
                 binary += Convert.ToString(i, 2);
             }
+
+            BigInteger test = BigInteger.Parse(binary);
+            BigInteger x = 1000000007;
+            BigInteger ret = (test % x);
+
+            ret.ToString();
+
+
+
+            return Convert.ToInt32(ret.ToString());
 
             // BigInteger can be found in the System.Numerics dll
             BigInteger res = 0;
