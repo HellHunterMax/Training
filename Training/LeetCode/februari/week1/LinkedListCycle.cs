@@ -18,6 +18,10 @@ namespace Training.LeetCode.februari.week1
     {
         public static bool HasCycle(ListNode head)
         {
+            if (head == null)
+            {
+                return false;
+            }
             ListNode node = head;
             List<ListNode> listOfNodes = new List<ListNode>();
             while(node.next != null)
