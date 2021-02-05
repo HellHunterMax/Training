@@ -8,7 +8,7 @@ namespace Training.LeetCode.februari.week1
     {
         public static int FindLHS(int[] nums)
         {
-            FirstGo(nums);
+            return FirstGo(nums);
         }
         private static int FirstGo(int[] nums)
         {
