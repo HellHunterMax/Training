@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Text;
 
 namespace Training.LeetCode.februari.week1
@@ -12,7 +13,7 @@ namespace Training.LeetCode.februari.week1
 
         public static string Simplify(string path)
         {
-            return FirstTry(path);
+            return ThirdAfterYoutube(path);
         }
         private static string FirstTry(string path)
         {
@@ -20,6 +21,68 @@ namespace Training.LeetCode.februari.week1
             
             string simple = _seperator;
             simple += String.Join(_seperator, commandList);
+            return simple;
+        }
+
+        private static string SecondAfterYoutube(string path)
+        {
+            List<string> commandList = path.Split('/').ToList();
+            for (int i = 0; i < commandList.Count; i++)
+            {
+                if (commandList[i] == _dot || commandList[i] == string.Empty)
+                {
+                    commandList.RemoveAt(i);
+                    i--;
+                }
+                else if (commandList[i] == _back)
+                {
+                    if (i > 0)
+                    {
+                        commandList.RemoveRange(i - 1, 2);
+                        i -= 2;
+                    }
+                    else
+                    {
+                        commandList.RemoveAt(i);
+                        i--;
+                    }
+                }
+            }
+            string simple = _seperator;
+            simple += String.Join(_seperator, commandList);
+            return simple;
+
+        }
+
+        //Fastest because List has to change numbers every time you remove element at the start.
+        private static string ThirdAfterYoutube(string path)
+        {
+            List<string> commandList = path.Split('/').ToList();
+            Stack<string> stack = new Stack<string>();
+            for (int i = 0; i < commandList.Count; i++)
+            {
+                if (commandList[i] == _dot || commandList[i] == string.Empty)
+                {
+                    continue;
+                }
+                else if (commandList[i] == _back)
+                {
+                    if (stack.Count > 0)
+                    {
+                        stack.Pop();
+                    }
+                    else
+                    {
+                        continue;
+                    }
+                }
+                else
+                {
+                    stack.Push(commandList[i]);
+                }
+            }
+            string simple = _seperator;
+            simple += String.Join(_seperator, stack.Reverse());
             return simple;
         }
 
