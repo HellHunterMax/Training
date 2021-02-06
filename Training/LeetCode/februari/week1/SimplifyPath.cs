@@ -34,7 +34,7 @@ namespace Training.LeetCode.februari.week1
                 string next = path[i].ToString();
                 if (next == _seperator)
                 {
-                    if (lastLetter == "")
+                    if (lastLetter == string.Empty)
                     {
                     }
                     else
