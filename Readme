@@ -1,0 +1,4 @@
+Findings:
+
+List is Slow when editing (removing or adding stuff ) from the start of a array because the rest of the list needs to change their place (index changes)
+when changing the last element in List/stack/queue/LinkedList all about the same speed.
