@@ -10,7 +10,7 @@ namespace Training.LeetCode.februari.week2
     {
         public static TreeNode ConvertBST(TreeNode root)
         {
-            return SecondTry(root);
+            return ThirdAfterSolution(root);
         }
 
         private static TreeNode FirstTry(TreeNode root)
@@ -67,26 +67,18 @@ namespace Training.LeetCode.februari.week2
             return tree[0];
         }
 
-        private static TreeNode CreateNewNode(TreeNode root, int val)
+        private static int sum = 0;
+
+        public static TreeNode ThirdAfterSolution(TreeNode root)
         {
-            TreeNode node = null;
-            if (root.Right != null && root.Left != null)
+            if (root != null)
             {
-                node = new TreeNode(val, root.Left, root.Right);
+                ThirdAfterSolution(root.Right);
+                sum += root.Val;
+                root.Val = sum;
+                ThirdAfterSolution(root.Left);
             }
-            else if (root.Right != null)
-            {
-                node = new TreeNode(val, null, root.Right);
-            }
-            else if (root.Left != null)
-            {
-                node = new TreeNode(val, root.Left, null);
-            }
-            else
-            {
-                node = new TreeNode(val);
-            }
-            return node;
+            return root;
         }
 
         private static TreeNode CreateNode(TreeNode root, int val)
