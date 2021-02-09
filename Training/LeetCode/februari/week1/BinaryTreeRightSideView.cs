@@ -5,14 +5,14 @@ namespace Training.LeetCode.februari.week1
 {
     public class TreeNode
     {
-        public int val;
-        public TreeNode left;
-        public TreeNode right;
+        public int Val;
+        public TreeNode Left;
+        public TreeNode Right;
         public TreeNode(int val = 0, TreeNode left = null, TreeNode right = null)
         {
-            this.val = val;
-            this.left = left;
-            this.right = right;
+            this.Val = val;
+            this.Left = left;
+            this.Right = right;
         }
     }
     public static class BinaryTreeRightSideView
@@ -44,7 +44,7 @@ namespace Training.LeetCode.februari.week1
             int[] rightSideView = new int[tree.Count];
             for (int i = 0; i < tree.Count; i++)
             {
-                rightSideView[i] = tree[i][tree[i].Count - 1].val;
+                rightSideView[i] = tree[i][tree[i].Count - 1].Val;
             }
             return rightSideView;
 
@@ -55,8 +55,8 @@ namespace Training.LeetCode.februari.week1
             List<TreeNode> treeNodes = new List<TreeNode>();
             foreach (TreeNode node in nodes)
             {
-                TreeNode l = node.left;
-                TreeNode r = node.right;
+                TreeNode l = node.Left;
+                TreeNode r = node.Right;
                 if (l != null)
                 {
                     treeNodes.Add(l);

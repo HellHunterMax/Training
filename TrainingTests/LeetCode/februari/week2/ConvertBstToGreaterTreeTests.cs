@@ -12,7 +12,6 @@ namespace TrainingTests.LeetCode.februari.week2
         [InlineData(new int[] { 3, 3, 2 }, new int[] { 1, 0, 2 })]
         [InlineData(new int[] { 1, -1, 1 }, new int[] { 0, -1, 1 })]
         [InlineData(new int[] { 30, 36, 21, 36, 35, 26, 15, -1, -1, -1, 33, -1, -1, -1, 8 }, new int[] { 4, 1, 6, 0, 2, 5, 7, -1, -1, -1, 3, -1, -1, -1, 8 })]
-        [InlineData(new int[] { 7, 9, 4, 10 }, new int[] { 3, 2, 4, 1 })]
         [Theory]
         public void ConvertBstToGreaterTree_Given_BSTTree_ReturnsGreaterTree(int[] expected, int[] treeArr)
         {
@@ -36,12 +35,13 @@ namespace TrainingTests.LeetCode.februari.week2
             for (int i = 0; i < tree.Count; i++)
             {
                 List<TreeNode> treeNodes = GetTreeNodes(tree[i]);
-                bool isTreeGrowing = true;
+                bool isTreeGrowing = false;
                 foreach (TreeNode node in treeNodes)
                 {
-                    if (node.val > -1)
+                    if (node.Val > -1)
                     {
-                        isTreeGrowing = false;
+                        isTreeGrowing = true;
+                        break;
                     }
                 }
                 if (!isTreeGrowing)
@@ -52,13 +52,11 @@ namespace TrainingTests.LeetCode.februari.week2
             }
             List<int> treeArr = new List<int>();
 
-            int treeI = 0;
-
             for (int i = 0; i < tree.Count; i++)
             {
                 for (int j = 0; j < tree[i].Count; j++)
                 {
-                    treeArr[treeI] = tree[i][j].val;
+                    treeArr.Add(tree[i][j].Val);
                 }
             }
 
@@ -69,8 +67,8 @@ namespace TrainingTests.LeetCode.februari.week2
             List<TreeNode> treeNodes = new List<TreeNode>();
             foreach (TreeNode node in nodes)
             {
-                TreeNode l = node.left;
-                TreeNode r = node.right;
+                TreeNode l = node.Left;
+                TreeNode r = node.Right;
                 if (l != null)
                 {
                     treeNodes.Add(l);
@@ -101,7 +99,7 @@ namespace TrainingTests.LeetCode.februari.week2
             int nodeCount = 0;
             for (int i = 1; i < tree.Count; i++)
             {
-                if (tree[i].val < 0)
+                if (tree[i].Val < 0)
                 {
                     if (i % 2 == 0)
                     {
@@ -111,7 +109,7 @@ namespace TrainingTests.LeetCode.februari.week2
                 }
                 if (i % 2 == 0)
                 {
-                    tree[nodeCount].right = tree[i];
+                    tree[nodeCount].Right = tree[i];
                     if (i % 2 == 0)
                     {
                         nodeCount++;
@@ -119,7 +117,7 @@ namespace TrainingTests.LeetCode.februari.week2
                 }
                 else
                 {
-                    tree[nodeCount].left = tree[i];
+                    tree[nodeCount].Left = tree[i];
                     if (i % 2 == 0)
                     {
                         nodeCount++;
