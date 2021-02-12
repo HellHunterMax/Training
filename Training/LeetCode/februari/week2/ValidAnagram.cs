@@ -14,14 +14,18 @@ namespace Training.LeetCode.februari.week2
 
         public static bool FirstTry(string s, string t)
         {
-            var S = String.Concat(s.OrderBy(c => c));
-            var T = String.Concat(t.OrderBy(c => c));
+            s = String.Concat(s.OrderBy(c => c));
+            t = String.Concat(t.OrderBy(c => c));
 
-            if (S == T)
+            if (s == t)
             {
                 return true;
             }
             return false;
+        }
+        public static bool SecondTry(string s, string t)
+        {
+
         }
     }
 }
