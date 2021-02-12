@@ -73,5 +73,29 @@ namespace Training.LeetCode.februari.week2
             }
             return true;
         }
+
+        //Wrong! doesnt work because 1+ 3 = 4 and 2 + 2 = 4
+        public static bool ThirdWithSollition(string s, string t)
+        {
+            if (s.Length != t.Length)
+            {
+                return false;
+            }
+
+            int number = 0;
+
+            for (int i = 0; i < s.Length; i++)
+            {
+                number += s[i];
+                number -= t[i];
+            }
+
+            if (number != 0)
+            {
+                return false;
+            }
+
+            return true;
+        }
     }
 }
