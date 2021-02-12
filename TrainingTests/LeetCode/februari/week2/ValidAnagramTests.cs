@@ -12,7 +12,8 @@ namespace TrainingTests.LeetCode.februari.week2
         [InlineData(false, "t", "s")]
         [InlineData(true, "anagram", "nagaram")]
         [InlineData(false, "rat", "Car")]
-        [InlineData(false, "tts", "stt")]
+        [InlineData(true, "tts", "stt")]
+        [InlineData(false, "tss", "stt")]
         [Theory]
         public void IsAnagram_Given_TwoStrings_Returns_IfAnagram(bool expected, string s, string t)
         {

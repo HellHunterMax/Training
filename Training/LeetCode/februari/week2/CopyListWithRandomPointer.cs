@@ -21,7 +21,7 @@ namespace Training.LeetCode.februari.week2
     {
         public static Node CopyRandomList(Node head)
         {
-            FirstTry(head);
+            return FirstTry(head);
         }
 
         private static Node FirstTry(Node head)

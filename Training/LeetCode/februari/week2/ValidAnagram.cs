@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Text;
 
 namespace Training.LeetCode.februari.week2
@@ -13,7 +14,14 @@ namespace Training.LeetCode.februari.week2
 
         public static bool FirstTry(string s, string t)
         {
-            throw new NotImplementedException();
+            var S = String.Concat(s.OrderBy(c => c));
+            var T = String.Concat(t.OrderBy(c => c));
+
+            if (S == T)
+            {
+                return true;
+            }
+            return false;
         }
     }
 }
