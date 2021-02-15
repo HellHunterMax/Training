@@ -1,4 +1,5 @@
 ﻿using System;
+using Training.LeetCode.februari.week2;
 
 namespace Training
 {
@@ -6,6 +7,7 @@ namespace Training
     {
         static void Main(string[] args)
         {
+            
         }
     }
 }
