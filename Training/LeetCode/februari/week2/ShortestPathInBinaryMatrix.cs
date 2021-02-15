@@ -32,12 +32,12 @@ namespace Training.LeetCode.februari.week2
                     {
                         return point[2];
                     }
-                    for (int i = 0; i < possibleLocations.Rank; i++)
+                    for (int i = 0; i < possibleLocations.GetLength(0); i++)
                     {
                         int row = point[0] + possibleLocations[i, 0];
                         int collumn = point[1] + possibleLocations[i, 1];
 
-                        if (row < 0 || row >= height || collumn < 0 || collumn >= width)
+                        if (row < 0 || row >= height || collumn < 0 || collumn >= width || grid[row][collumn] == 1)
                         {
                             continue;
                         }
