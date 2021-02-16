@@ -9,7 +9,7 @@ namespace Training.LeetCode.februari.week3
     {
         public static int[] KWeakestRows(int[][] mat, int k)
         {
-            return FirstTry(mat, k);
+            return Speedup(mat, k);
         }
 
         private static int[] FirstTry(int[][] mat, int k)
