@@ -48,6 +48,7 @@ namespace Training.LeetCode.februari.week3
                     {
                         int index = FindIndex(rows, sum);
                         rows.Insert(index, new KeyValuePair<int, int>(i, sum));
+                        rows.RemoveAt(rows.Count - 1);
                     }
                     else
                     {
@@ -56,7 +57,16 @@ namespace Training.LeetCode.februari.week3
                 }
                 else
                 {
-                    rows.Add(new KeyValuePair<int, int>(i, sum));
+                    int index = FindIndex(rows, sum);
+                    if (index> rows.Count -1)
+                    {
+                        rows.Add(new KeyValuePair<int, int>(i, sum));
+                    }
+                    else
+                    {
+                        rows.Insert(index, new KeyValuePair<int, int>(i, sum));
+                    }
+                    
                 }
             }
             int[] weakestRows = new int[k];
@@ -70,14 +80,19 @@ namespace Training.LeetCode.februari.week3
         }
         private static int FindIndex(List<KeyValuePair<int, int>> rows, int num)
         {
-            for (int i = rows.Count -1; i >= 0; i++)
+            int index = rows.Count;
+            for (int i = rows.Count-1; i >= 0; i--)
             {
-                if (num <= rows.ElementAt(i).Value)
+                if (num < rows.ElementAt(i).Value)
                 {
-                    return i + 1;
+                    index = i;
+                }
+                else
+                {
+                    break;
                 }
             }
-            return 0;
+            return index;
         }
     }
 }
