@@ -17,9 +17,9 @@ namespace TrainingTests.LeetCode.februari.week3
         [InlineData(50, "L")]
         [InlineData(100, "C")]
         [InlineData(500, "D")]
+        [InlineData(1000, "M")]
         [InlineData(58, "LVIII")]
         [InlineData(1994, "MCMXCIV")]
-        [InlineData(1000, "M")]
         [Theory]
         public void RomanToInteger_Given_RomanLetters_Returns_Integer(int expected, string roman)
         {
