@@ -7,7 +7,7 @@ namespace Training.LeetCode.februari.week3
     {
         public static int Calculate(int X, int Y)
         {
-            return FirstTry(X, Y);
+            return SecondTry(X, Y);
         }
 
         private static int FirstTry(int X, int Y)
@@ -69,6 +69,21 @@ namespace Training.LeetCode.februari.week3
             }
 
             return Math.Min(count, possibleCount);
+        }
+
+        public static int SecondTry(int X, int Y)
+        {
+            if (X >= Y)
+            {
+                return X- Y;
+            }
+
+            if (Y% 2 == 0)
+            {
+                return 1 + SecondTry(X, Y / 2);
+            }
+
+            return 1 + SecondTry(X, Y + 1);
         }
     }
 }
