@@ -6,9 +6,14 @@ namespace Training.LeetCode.februari.week3
 {
     public static class BrokenCalculator
     {
-        public static int calculate(int X, int Y)
+        public static int Calculate(int X, int Y)
         {
-            throw new NotImplementedException();
+            int count = 0;
+            if (X > Y)
+            {
+                count += Math.Abs(Y - X);
+            }
+            return count;
         }
     }
 }
