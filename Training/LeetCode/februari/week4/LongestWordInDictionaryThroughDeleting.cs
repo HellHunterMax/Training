@@ -11,6 +11,39 @@ namespace Training.LeetCode.februari.week4
         public static string FindLongestWord(string s, IList<string> d)
         {
             string finalWord = String.Empty;
+
+            foreach (var word in d)
+            {
+                int isWordLonger = IsWord2Longer(finalWord, word);
+                if (isWordLonger == longer)
+                {
+                    if (DoesWord2FitInWord1(s, word))
+                    {
+                        finalWord = word;
+                    }
+                }
+                else if (isWordLonger == sameLength)
+                {
+                    if (DoesWord2FitInWord1(s, word))
+                    {
+                        if (IsWord2lexicographicallySmaller(finalWord, word))
+                        {
+                            finalWord = word;
+                        }
+                    }
+                }
+                else if (isWordLonger == shorter)
+                {
+                    continue;
+                }
+            }
+
+            return finalWord;
+        }
+
+        private static string FirstTry(string s, IList<string> d)
+        {
+            string finalWord = String.Empty;
             var dic = BuildDictionaryFromWord(s);
 
             foreach (var word in d)
@@ -42,6 +75,30 @@ namespace Training.LeetCode.februari.week4
             }
 
             return finalWord;
+        }
+
+        private static bool DoesWord2FitInWord1(string word1, string word2)
+        {
+            int length = word1.Length;
+            int index = 0;
+
+            foreach (var letter in word2)
+            {
+                if (index >= length)
+                {
+                    return false;
+                }
+                int next = word1.IndexOf(letter, index);
+                if (next >= 0)
+                {
+                    index = next + 1;
+                }
+                else
+                {
+                    return false;
+                }
+            }
+            return true;
         }
 
         /// <summary>
