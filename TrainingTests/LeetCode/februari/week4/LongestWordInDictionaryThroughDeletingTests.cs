@@ -11,6 +11,7 @@ namespace TrainingTests.LeetCode.februari.week4
         [InlineData("a", "abc", new string[] { "a", "b", "c" })]
         [InlineData("a", "abpcplea", new string[] { "a", "b", "c" })]
         [InlineData("apple", "abpcplea", new string[] { "ale", "apple", "monkey", "plea" })]
+        [InlineData("best", "wordgoodgoodgoodbestword", new string[] { "word", "good", "best", "good" })]
         [Theory]
         public void FindLongestWord_Given_StringAndListOFStrings_Returns_LongestWordPossible(string expected, string s, string[] d)
         {

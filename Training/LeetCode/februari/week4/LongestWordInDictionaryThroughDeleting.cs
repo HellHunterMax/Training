@@ -132,6 +132,14 @@ namespace Training.LeetCode.februari.week4
                 {
                     return true;
                 }
+                else if (word2[i] == word1[i])
+                {
+                    continue;
+                }
+                else
+                {
+                    return false;
+                }
             }
             return false;
         }
