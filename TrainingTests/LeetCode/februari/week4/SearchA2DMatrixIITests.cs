@@ -11,6 +11,8 @@ namespace TrainingTests.LeetCode.februari.week4
         [InlineData(true, 1 )]
         [InlineData(false, 20)]
         [InlineData(true, 5)]
+        [InlineData(true, 14)]
+        [InlineData(true, 17)]
         [InlineData(false, 60)]
         [Theory]
         public void SearchMatrix_Given_NumberAndMatrix_Returns_IfNumberIsInMatrix(bool IsInMatrix, int target)
@@ -30,6 +32,17 @@ namespace TrainingTests.LeetCode.februari.week4
             {
                 Assert.False(actual);
             }
+        }
+
+        [Fact]
+        public void Test_WithMinusInMatrix_should_Be_False()
+        {
+            // [[-1,3]] 1
+            int[][] matrix = new int[][] { new int[] { -1, 3 } };
+
+            bool actual = SearchA2DMatrixII.SearchMatrix(matrix, 1);
+
+            Assert.False(actual);
         }
     }
 }
