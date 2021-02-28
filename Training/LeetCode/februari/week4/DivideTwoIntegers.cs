@@ -41,9 +41,11 @@ namespace Training.LeetCode.februari.week4
 
         private static int DevideAbsolute(int absDividend, int absDivisor)
         {
-            int half = FindHalf(absDivisor);
+            bool isTrueHalf = false;
+            int half = FindHalf(absDivisor,ref isTrueHalf);
             int answer = 0;
             int remaining = absDividend;
+            
 
             for (int i = 0; i < absDividend; i++)
             {
@@ -51,6 +53,10 @@ namespace Training.LeetCode.februari.week4
                 {
                     if (remaining >= half)
                     {
+                        if (isTrueHalf)
+                        {
+                            break;
+                        }
                         answer++;
                         break;
                     }
@@ -69,7 +75,7 @@ namespace Training.LeetCode.februari.week4
             return answer;
         }
 
-        private static int FindHalf(int absDivisor)
+        private static int FindHalf(int absDivisor, ref bool isTrueHalf)
         {
             int count = 0;
             int half = 0;
@@ -78,8 +84,13 @@ namespace Training.LeetCode.februari.week4
             {
                 half++;
                 count += 2;
-                if (count >= absDivisor)
+                if (count > absDivisor)
                 {
+                    break;
+                }
+                else if (count == absDivisor)
+                {
+                    isTrueHalf = true;
                     break;
                 }
                 /*
