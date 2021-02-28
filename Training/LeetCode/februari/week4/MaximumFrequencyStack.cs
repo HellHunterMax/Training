@@ -40,14 +40,14 @@ namespace Training.LeetCode.februari.week4
             int chosenNumber = -1;
             var numbers = FindMostNumbers();
 
-            foreach (var number in numbers)
+            for (int i = _numbers.Count -1; i >= 0; i--)
             {
-                int index = _numbers.LastIndexOf(number);
-
-                if(lastIndex < index)
+                int number = _numbers[i];
+                if (numbers.Contains(number))
                 {
-                    lastIndex = index;
+                    lastIndex = i;
                     chosenNumber = number;
+                    break;
                 }
             }
 
@@ -84,7 +84,7 @@ namespace Training.LeetCode.februari.week4
         {
             _dic = (Dictionary<int, int>)(from pair in _dic
                    orderby pair.Value descending
-                   select pair).ToDictionary(pair => pair.Key, pair => pair.Value); ;
+                   select pair).ToDictionary(pair => pair.Key, pair => pair.Value);
         }
     }
 }
