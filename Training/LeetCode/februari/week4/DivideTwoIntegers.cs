@@ -17,6 +17,10 @@ namespace Training.LeetCode.februari.week4
             {
                 return dividend;
             }
+            if (dividend == 1 || dividend == -1)
+            {
+                return 0;
+            }
             if (divisor == -1)
             {
                 return 0 - dividend;
@@ -27,7 +31,7 @@ namespace Training.LeetCode.februari.week4
 
             int answer = DevideAbsolute(absDividend, absDivisor);
 
-            if (divisor < 0)
+            if ((divisor < 0 && dividend > 0)|| (dividend < 0 && divisor > 0))
             {
                 answer = 0 - answer;
             }
@@ -78,6 +82,12 @@ namespace Training.LeetCode.februari.week4
                 {
                     break;
                 }
+                /*
+                else if (count == absDivisor)
+                {
+                    half--;
+                    break;
+                }*/
             }
             return half;
         }

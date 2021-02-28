@@ -16,6 +16,7 @@ namespace TrainingTests.LeetCode.februari.week4
         [InlineData(-2, 7, -3)]
         [InlineData(2, -4, -2)]
         [InlineData(-2, -4, 2)]
+        [InlineData(0, 1, 2)]
         [Theory]
         public void DivideTwoIntegers_Given_TwoInts_Divides(int expected, int dividend, int divisor)
         {
