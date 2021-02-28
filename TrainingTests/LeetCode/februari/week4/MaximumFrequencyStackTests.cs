@@ -13,7 +13,7 @@ namespace TrainingTests.LeetCode.februari.week4
         [InlineData(new int[] { 1 }, new string[] { "Push", "Push", "Push", "Pop" }, new int[] { 1, 1, 3, -1 })]
         [InlineData(new int[] { 3, 2, 1 }, new string[] { "Push", "Push", "Push", "Pop", "Pop", "Pop" }, new int[] { 1, 2, 3, -1, -1, -1 })]
         [InlineData(new int[] { 1, 3 }, new string[] { "Push", "Pop", "Push", "Pop" }, new int[] { 1, -1, 3, -1 })]
-        [InlineData(new int[] { 2, 1, 2, 1 }, new string[] { "Push", "Push", "Push", "Pop", "Pop", "Pop", "Pop" }, new int[] { 1, 1, 2, 2 })]
+        [InlineData(new int[] { 2, 1, 2, 1 }, new string[] { "Push", "Push", "Push", "Push", "Pop", "Pop", "Pop", "Pop" }, new int[] { 1, 1, 2, 2 })]
         [Theory]
         public void FreqStack_Given_Commands_Returns_Ints(int[] expected, string[] commands, int[] numbers)
         {
