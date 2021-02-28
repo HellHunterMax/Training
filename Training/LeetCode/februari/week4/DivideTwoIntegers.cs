@@ -8,12 +8,12 @@ namespace Training.LeetCode.februari.week4
     {
         public static int Divide(int dividend, int divisor)
         {
-            throw new NotImplementedException();
+            return FirstTry(dividend, divisor);
         }
 
         private static int FirstTry(int dividend, int divisor)
         {
-            if (divisor == 1)
+            if (divisor == 1 || dividend == 0)
             {
                 return dividend;
             }
@@ -22,21 +22,33 @@ namespace Training.LeetCode.februari.week4
                 return 0 - dividend;
             }
 
-            int answer = 0;
             int absDividend = Math.Abs(dividend);
             int absDivisor = Math.Abs(divisor);
 
-            int half = FindHalf(absDivisor);
+            int answer = DevideAbsolute(absDividend, absDivisor);
 
+            if (divisor < 0)
+            {
+                answer = 0 - answer;
+            }
+
+            return answer;
+        }
+
+        private static int DevideAbsolute(int absDividend, int absDivisor)
+        {
+            int half = FindHalf(absDivisor);
+            int answer = 0;
             int remaining = absDividend;
 
             for (int i = 0; i < absDividend; i++)
             {
-                if (remaining > absDivisor)
+                if (remaining < absDivisor)
                 {
                     if (remaining >= half)
                     {
                         answer++;
+                        break;
                     }
                     else
                     {
