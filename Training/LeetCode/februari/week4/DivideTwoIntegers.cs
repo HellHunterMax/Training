@@ -19,31 +19,44 @@ namespace Training.LeetCode.februari.week4
             }
             if (divisor == -1)
             {
+                if (dividend == -2147483648)
+                {
+                    return 2147483647;
+                }
                 return 0 - dividend;
             }
 
-            int absDividend = Math.Abs(dividend);
-            int absDivisor = Math.Abs(divisor);
+            long dividendL = dividend;
+            long divisorL = divisor;
 
-            int answer = DevideAbsolute(absDividend, absDivisor);
+            long absDividend = Math.Abs(dividendL);
+            long absDivisor = Math.Abs(divisorL);
+
+            long answer = DevideAbsolute(absDividend, absDivisor);
 
             if ((divisor < 0 && dividend > 0)|| (dividend < 0 && divisor > 0))
             {
                 answer = 0 - answer;
             }
-
-            return answer;
+            if (answer > 2147483647)
+            {
+                return 2147483647;
+            }
+            else
+            {
+                return Convert.ToInt32(answer);
+            }
         }
 
-        private static int DevideAbsolute(int absDividend, int absDivisor)
+        private static long DevideAbsolute(long absDividend, long absDivisor)
         {
             bool isTrueHalf = false;
-            int half = FindHalf(absDivisor,ref isTrueHalf);
-            int answer = 0;
-            int remaining = absDividend;
+            long half = FindHalf(absDivisor,ref isTrueHalf);
+            long answer = 0;
+            long remaining = absDividend;
             
 
-            for (int i = 0; i < absDividend; i++)
+            for (long i = 0; i < absDividend; i++)
             {
                 if (remaining < absDivisor)
                 {
@@ -71,12 +84,12 @@ namespace Training.LeetCode.februari.week4
             return answer;
         }
 
-        private static int FindHalf(int absDivisor, ref bool isTrueHalf)
+        private static long FindHalf(long absDivisor, ref bool isTrueHalf)
         {
-            int count = 0;
-            int half = 0;
+            long count = 0;
+            long half = 0;
 
-            for (int i = 0; i < absDivisor; i++)
+            for (long i = 0; i < absDivisor; i++)
             {
                 half++;
                 count += 2;
@@ -89,12 +102,6 @@ namespace Training.LeetCode.februari.week4
                     isTrueHalf = true;
                     break;
                 }
-                /*
-                else if (count == absDivisor)
-                {
-                    half--;
-                    break;
-                }*/
             }
             return half;
         }
