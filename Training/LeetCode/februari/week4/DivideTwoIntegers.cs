@@ -21,10 +21,6 @@ namespace Training.LeetCode.februari.week4
             {
                 return 0 - dividend;
             }
-            if (dividend == 1 || dividend == -1)
-            {
-                return 0;
-            }
 
             int absDividend = Math.Abs(dividend);
             int absDivisor = Math.Abs(divisor);
