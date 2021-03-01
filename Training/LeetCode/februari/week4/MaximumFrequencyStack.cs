@@ -11,90 +11,53 @@ namespace Training.LeetCode.februari.week4
 
     public class FreqStack
     {
-        private List<int> _numbers;
-        private Dictionary<int, int> _dic;
+        private Dictionary<int, int> _numbersWithFrequencys;
+        private Dictionary<int, Stack<int>> _frequencysWithNumbersStack;
+        private int _maxFrequency = 0;
 
         public FreqStack()
         {
-            _numbers = new List<int>();
-            _dic = new Dictionary<int, int>();
+            _numbersWithFrequencys = new Dictionary<int, int>();
+            _frequencysWithNumbersStack = new Dictionary<int, Stack<int>>();
         }
 
         public void Push(int x)
         {
-            _numbers.Add(x);
-            if(_dic.ContainsKey(x))
+            if(_numbersWithFrequencys.ContainsKey(x))
             {
-                _dic[x]++;
+                _numbersWithFrequencys[x]++;
             }
             else
             {
-                _dic.Add(x, 1);
+                _numbersWithFrequencys.Add(x, 1);
+            }
+            if (_frequencysWithNumbersStack.ContainsKey(_numbersWithFrequencys[x]))
+            {
+                _frequencysWithNumbersStack[_numbersWithFrequencys[x]].Push(x);
+            }
+            else
+            {
+                _frequencysWithNumbersStack.Add(_numbersWithFrequencys[x], new Stack<int>());
+                _frequencysWithNumbersStack[_numbersWithFrequencys[x]].Push(x);
+            }
+            if (_numbersWithFrequencys[x] > _maxFrequency)
+            {
+                _maxFrequency = _numbersWithFrequencys[x];
             }
         }
 
         public int Pop()
         {
-            int lastIndex = -1;
-            int chosenNumber = -1;
-            var numbers = FindMostNumbersWithoutSorting();
+            int chosenNumber = _frequencysWithNumbersStack[_maxFrequency].Pop();
+            _numbersWithFrequencys[chosenNumber]--;
 
-            foreach (var number in numbers)
+            if(_frequencysWithNumbersStack[_maxFrequency].Count == 0)
             {
-                int index = _numbers.LastIndexOf(number);
-
-                if(lastIndex < index)
-                {
-                    lastIndex = index;
-                    chosenNumber = number;
-                }
+                _frequencysWithNumbersStack.Remove(_maxFrequency);
+                _maxFrequency--;
             }
-
-            _dic[chosenNumber]--;
-            if (_dic[chosenNumber] == 0)
-            {
-                _dic.Remove(chosenNumber);
-            }
-            _numbers.RemoveAt(lastIndex);
 
             return chosenNumber;
         }
-        /*
-        private List<int> FindMostNumbers()
-        {
-            List<int> numbers = new List<int>();
-            int freq = _dic.First().Value;
-
-            foreach (var pair in _dic)
-            {
-                if (pair.Value == freq)
-                {
-                    numbers.Add(pair.Key);
-                }
-                else
-                {
-                    break;
-                }
-            }
-            return numbers;
-        }
-        */
-        private List<int> FindMostNumbersWithoutSorting()
-        {
-            int freq = _dic.Values.Max();
-
-            List<int> numbers = (from pair in _dic
-                       where pair.Value == freq
-                       select pair.Key).ToList();
-
-            return numbers;
-        }
-        /*
-        private void Sort_dic()
-        {
-            _dic = (Dictionary<int, int>)(from pair in _dic
-                   orderby pair.Value descending
-                   select pair).ToDictionary(pair => pair.Key, pair => pair.Value);
-        }*/
     }
 }
