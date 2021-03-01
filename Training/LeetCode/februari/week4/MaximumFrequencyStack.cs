@@ -35,10 +35,9 @@ namespace Training.LeetCode.februari.week4
 
         public int Pop()
         {
-            Sort_dic();
             int lastIndex = -1;
             int chosenNumber = -1;
-            var numbers = FindMostNumbers();
+            var numbers = FindMostNumbersWithoutSorting();
 
             foreach (var number in numbers)
             {
@@ -60,7 +59,7 @@ namespace Training.LeetCode.februari.week4
 
             return chosenNumber;
         }
-
+        /*
         private List<int> FindMostNumbers()
         {
             List<int> numbers = new List<int>();
@@ -79,12 +78,23 @@ namespace Training.LeetCode.februari.week4
             }
             return numbers;
         }
+        */
+        private List<int> FindMostNumbersWithoutSorting()
+        {
+            int freq = _dic.Values.Max();
 
+            List<int> numbers = (from pair in _dic
+                       where pair.Value == freq
+                       select pair.Key).ToList();
+
+            return numbers;
+        }
+        /*
         private void Sort_dic()
         {
             _dic = (Dictionary<int, int>)(from pair in _dic
                    orderby pair.Value descending
-                   select pair).ToDictionary(pair => pair.Key, pair => pair.Value); ;
-        }
+                   select pair).ToDictionary(pair => pair.Key, pair => pair.Value);
+        }*/
     }
 }
