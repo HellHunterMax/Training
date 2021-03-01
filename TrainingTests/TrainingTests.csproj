@@ -24,7 +24,8 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="LeetCode\februari\week1\" />
+    <Folder Include="HackerRank\Algorithm\Warmup\" />
+    <Folder Include="Other\" />
   </ItemGroup>
 
 </Project>

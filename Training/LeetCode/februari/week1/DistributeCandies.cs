@@ -4,7 +4,7 @@ using System.Text;
 
 namespace Training.LeetCode.februari.week1
 {
-    public static class LinkedListCycle
+    public static class DistributeCandies
     {
     }
 }
