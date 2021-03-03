@@ -11,6 +11,7 @@ namespace TrainingTests.LeetCode.februari.week1
         [InlineData(new int[] { 1, 2 }, new int[] { 1, 1})]
         [InlineData(new int[] { 2, 3 }, new int[] { 1, 2, 2, 4 })]
         [InlineData(new int[] { 2, 1 }, new int[] { 3, 2, 2 })]
+        [InlineData(new int[] { 3, 2 }, new int[] { 8, 7, 3, 5, 3, 6, 1, 4 })]
         [Theory]
         public void FindErrorNums_Given_Array_Returns_TwoNumbersFirstOriginalSecondExpected(int[] expected, int[] s)
         {
