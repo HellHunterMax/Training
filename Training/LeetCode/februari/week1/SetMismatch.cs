@@ -8,12 +8,12 @@ namespace Training.LeetCode.februari.week1
     {
         public static int[] FindErrorNums(int[] nums)
         {
-            bool forward = nums[0] == 1 ? true: false;
+            Array.Sort(nums);
 
-            return forward ? Forward(nums) : Backward(nums);
+            return FindMissingNumber(nums);
         }
         
-        private static int[] Forward(int[] nums)
+        private static int[] FindMissingNumber(int[] nums)
         {
             for (int i = 0; i < nums.Length +1; i++)
             {
@@ -24,6 +24,7 @@ namespace Training.LeetCode.februari.week1
             }
             return new int[] { -1, -1 };
         }
+        /*
         private static int[] Backward(int[] nums)
         {
             int number = 1;
@@ -36,6 +37,6 @@ namespace Training.LeetCode.februari.week1
             }
 
             return new int[] { -1, -1 };
-        }
+        }*/
     }
 }
