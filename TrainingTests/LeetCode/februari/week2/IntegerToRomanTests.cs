@@ -21,7 +21,7 @@ namespace TrainingTests.LeetCode.februari.week2
         [InlineData("C", 100)]
         [InlineData("D", 500)]
         [InlineData("M", 1000)]
-        [InlineData("MMMCMXCIX", 100)]
+        [InlineData("MMMCMXCIX", 3999)]
         [InlineData("LVIII", 58)]
         [InlineData("MCMXCIV", 1994)]
         [Theory]
